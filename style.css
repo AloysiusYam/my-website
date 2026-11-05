@@ -1,0 +1,429 @@
+/* =========================================================
+   Growth rings: a green-and-white theme based on tree rings
+   Change the colours here to restyle the whole site.
+   ========================================================= */
+:root {
+  --canopy: #0f3d2e;   /* deep green: hero, contact, footer */
+  --fern: #2f7d4f;     /* mid green: links, dots, accents */
+  --lichen: #a8c99a;   /* pale green: ring lines on dark green */
+  --moss: #e4efe1;     /* light tint: dividers, timeline line */
+  --paper: #ffffff;    /* white background */
+  --ink: #15241c;      /* main text */
+  --muted: #4d6355;    /* secondary text */
+
+  --serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --sans: "Hanken Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+
+  --wrap: 1080px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--fern);
+}
+
+/* Keyboard focus outline */
+a:focus-visible {
+  outline: 3px solid var(--lichen);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.wrap {
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  color: var(--paper);
+  background-color: var(--canopy);
+  /* Two overlapping sets of rings, slightly off-centre, so the lines
+     look like tree rings rather than a perfect target */
+  background-image:
+    repeating-radial-gradient(circle at 88% 115%,
+      transparent 0 34px, rgba(168, 201, 154, 0.28) 34px 35.5px),
+    repeating-radial-gradient(circle at 84% 112%,
+      transparent 0 61px, rgba(168, 201, 154, 0.14) 61px 62px);
+}
+
+/* Fade the rings out toward the text side so the headline stays clear */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, var(--canopy) 30%, rgba(15, 61, 46, 0) 75%);
+  pointer-events: none;
+}
+
+.hero > * {
+  position: relative;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.logo {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  color: var(--paper);
+  text-decoration: none;
+}
+
+.nav-links a {
+  margin-left: 1.75rem;
+  color: rgba(255, 255, 255, 0.78);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+  color: var(--paper);
+}
+
+.hero-body {
+  padding-top: clamp(5rem, 14vh, 9rem);
+  padding-bottom: clamp(6rem, 18vh, 11rem);
+}
+
+.hero h1 {
+  font-size: clamp(3.2rem, 10vw, 7.5rem);
+  letter-spacing: -0.02em;
+  max-width: 10ch;
+  margin-bottom: 1.75rem;
+}
+
+.lead {
+  max-width: 34rem;
+  font-size: 1.25rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.86);
+  margin-bottom: 2.5rem;
+}
+
+/* The one animation: the hero text rises in once on page load */
+.hero-body > * {
+  animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.hero-body > :nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.hero-body > :nth-child(3) {
+  animation-delay: 0.24s;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 999px;
+  border: 1.5px solid transparent;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-light {
+  color: var(--canopy);
+  background: var(--paper);
+}
+
+.btn-light:hover {
+  background: var(--moss);
+}
+
+.btn-ghost {
+  color: var(--paper);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ---------- Sections (About, Interests, Experience) ---------- */
+.section {
+  padding: 6rem 0;
+}
+
+.section + .section {
+  border-top: 1px solid var(--moss);
+}
+
+/* Heading on the left, content on the right */
+.split {
+  display: grid;
+  grid-template-columns: 14rem 1fr;
+  gap: 3rem;
+}
+
+.split > h2 {
+  font-size: 2.6rem;
+  color: var(--canopy);
+  align-self: start;
+  position: sticky;
+  top: 2rem;
+}
+
+.section-body {
+  max-width: 40rem;
+}
+
+.section-body > p + p {
+  margin-top: 1.1rem;
+}
+
+.section-body p {
+  color: var(--muted);
+}
+
+.section-body .intro {
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+}
+
+/* About: quick facts */
+.facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.75rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--moss);
+}
+
+.facts dt {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.facts dd {
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+/* Interests: term on top, description below */
+.interests {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem 3rem;
+}
+
+.interests dt {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  line-height: 1.2;
+  color: var(--canopy);
+  margin-bottom: 0.5rem;
+}
+
+.interests dd {
+  color: var(--muted);
+}
+
+/* Experience: vertical line with ring-shaped dots */
+.timeline {
+  list-style: none;
+  border-left: 2px solid var(--moss);
+  padding-left: 2.25rem;
+}
+
+.job {
+  position: relative;
+}
+
+.job + .job {
+  margin-top: 3.25rem;
+}
+
+.job::before {
+  content: "";
+  position: absolute;
+  left: calc(-2.25rem - 9px);
+  top: 0.2rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 2px solid var(--fern);
+  box-shadow: 0 0 0 4px var(--paper), 0 0 0 5.5px var(--lichen);
+}
+
+.job h3 {
+  font-size: 1.65rem;
+  color: var(--canopy);
+  margin: 0.3rem 0 0.35rem;
+}
+
+.job .org {
+  font-weight: 500;
+  color: var(--fern);
+  margin-bottom: 0.9rem;
+}
+
+.job ul {
+  padding-left: 1.1rem;
+  color: var(--muted);
+}
+
+.job ul li + li {
+  margin-top: 0.3rem;
+}
+
+/* Placeholder text: grey italics so it's easy to find and replace.
+   Remove class="placeholder" once you've filled something in. */
+.placeholder,
+.section-body .placeholder {
+  font-style: italic;
+  color: #6f7f75;
+}
+
+.date {
+  font-size: 0.92rem;
+}
+
+/* ---------- Contact ---------- */
+.contact {
+  padding: 7rem 0;
+  color: var(--paper);
+  background-color: var(--canopy);
+  /* Rings echo the hero, this time from the top-left corner */
+  background-image:
+    repeating-radial-gradient(circle at -5% -20%,
+      transparent 0 34px, rgba(168, 201, 154, 0.16) 34px 35.5px);
+}
+
+.contact h2 {
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  margin-bottom: 1rem;
+}
+
+.contact p {
+  max-width: 32rem;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.86);
+  margin-bottom: 2.25rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  background: var(--canopy);
+  border-top: 1px solid rgba(168, 201, 154, 0.2);
+}
+
+.footer .wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer a {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ---------- Phones and small screens ---------- */
+@media (max-width: 760px) {
+  .nav-links a {
+    margin-left: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .nav-links a:first-child {
+    margin-left: 0;
+  }
+
+  .section {
+    padding: 4rem 0;
+  }
+
+  .split {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .split > h2 {
+    position: static;
+  }
+
+  .facts,
+  .interests {
+    grid-template-columns: 1fr;
+  }
+
+  .interests {
+    gap: 1.75rem;
+  }
+}
+
+/* Turn off motion for people who prefer less of it */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-body > * {
+    animation: none;
+  }
+}
