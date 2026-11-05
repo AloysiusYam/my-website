@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documents | Aloysius Yam</title>
+  <meta name="description" content="Result slips, certificates and other documents from Aloysius Yam.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER: smaller version of the home page's green block -->
+  <header class="hero hero-small" id="top">
+    <nav class="nav wrap" aria-label="Main">
+      <a href="index.html" class="logo">Aloysius Yam</a>
+      <div class="nav-links">
+        <a href="index.html#about">About</a>
+        <a href="index.html#education">Education</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="documents.html" aria-current="page">Documents</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </nav>
+
+    <div class="hero-body wrap">
+      <h1>Documents</h1>
+      <p class="lead">Result slips, certificates and other supporting documents, as PDFs.</p>
+    </div>
+  </header>
+
+  <main>
+    <!--
+      HOW TO ADD A PDF
+      1. Put the PDF in the "docs" folder. Use a short name with no spaces,
+         e.g. docs/a-level-results.pdf
+      2. Find the matching entry below. Replace the grey
+         <span class="doc-missing">PDF not added yet</span>
+         with:
+         <a href="docs/a-level-results.pdf" class="btn btn-green btn-small" target="_blank" rel="noopener">View PDF</a>
+      3. To add a new entry, copy a whole <li> ... </li> block and change the text.
+
+      BEFORE UPLOADING: result slips and school documents often show your
+      NRIC number. Black it out first, because everything here is public.
+    -->
+
+    <!-- RESULT SLIPS -->
+    <section id="results" class="section">
+      <div class="wrap split">
+        <h2>Results</h2>
+        <ul class="section-body doc-list">
+          <li>
+            <div>
+              <h3>GCE A-Level results</h3>
+              <p>Anglo-Chinese Junior College, 2024</p>
+            </div>
+            <span class="doc-missing">PDF not added yet</span>
+          </li>
+          <li>
+            <div>
+              <h3 class="placeholder">[Other result slip, e.g. GCE O-Level results]</h3>
+              <p class="placeholder">[School, year]</p>
+            </div>
+            <span class="doc-missing">PDF not added yet</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section id="certificates" class="section">
+      <div class="wrap split">
+        <h2>Certificates</h2>
+        <ul class="section-body doc-list">
+          <li>
+            <div>
+              <h3>Net Zero 101: What, Why and How</h3>
+              <p>United Nations University (UNU-IAS), 10 Oct 2026</p>
+            </div>
+            <a href="docs/net-zero-101-certificate.pdf" class="btn btn-green btn-small" target="_blank" rel="noopener">View PDF</a>
+          </li>
+          <li>
+            <div>
+              <h3>Introduction to Sustainability and Sustainable Finance</h3>
+              <p>Singapore Green Finance Centre, 11 Mar 2026</p>
+            </div>
+            <a href="docs/sustainable-finance-certificate.pdf" class="btn btn-green btn-small" target="_blank" rel="noopener">View PDF</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- OTHER DOCUMENTS -->
+    <section id="other" class="section">
+      <div class="wrap split">
+        <h2>Other</h2>
+        <ul class="section-body doc-list">
+          <li>
+            <div>
+              <h3 class="placeholder">[Document name]</h3>
+              <p class="placeholder">[Who issued it, date]</p>
+            </div>
+            <span class="doc-missing">PDF not added yet</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p>&copy; 2026 Aloysius Yam</p>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+
+</body>
+</html>

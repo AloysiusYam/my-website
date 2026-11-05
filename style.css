@@ -483,3 +483,103 @@ h3 {
     animation: none;
   }
 }
+
+/* =========================================================
+   Extra pages: Documents and Testimonials
+   ========================================================= */
+
+/* Smaller green header used at the top of the extra pages */
+.hero-small .hero-body {
+  display: block;
+  padding-top: clamp(2.5rem, 7vh, 4.5rem);
+  padding-bottom: clamp(3rem, 9vh, 5.5rem);
+}
+
+.hero-small h1 {
+  font-size: clamp(2.6rem, 6vw, 4.5rem);
+  max-width: none;
+  margin-bottom: 1rem;
+}
+
+.hero-small .lead {
+  margin-bottom: 0;
+}
+
+/* Underline the menu link for the page you're on */
+.nav-links a[aria-current="page"] {
+  color: var(--paper);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+/* A list of documents: title and details on the left, button on the right */
+.doc-list {
+  list-style: none;
+}
+
+.doc-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--moss);
+}
+
+.doc-list li:first-child {
+  padding-top: 0;
+}
+
+.doc-list h3 {
+  font-size: 1.45rem;
+  color: var(--canopy);
+  margin-bottom: 0.25rem;
+}
+
+.doc-list p {
+  font-size: 0.95rem;
+}
+
+/* Small green button, for use on white backgrounds */
+.btn-green {
+  color: var(--paper);
+  background: var(--fern);
+}
+
+.btn-green:hover {
+  background: var(--canopy);
+}
+
+.btn-small {
+  padding: 0.55rem 1.1rem;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+/* Grey "PDF not added yet" label in place of a button */
+.doc-missing {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #6f7f75;
+  white-space: nowrap;
+}
+
+/* Link under a certificate on the home page */
+.doc-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+@media (max-width: 760px) {
+  .doc-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}
+
+/* "See all documents" link under the home page certificates */
+.section-more {
+  margin-top: 2.25rem;
+  font-weight: 600;
+}
