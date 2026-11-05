@@ -118,15 +118,45 @@ h3 {
 }
 
 .hero-body {
-  padding-top: clamp(5rem, 14vh, 9rem);
-  padding-bottom: clamp(6rem, 18vh, 11rem);
+  display: grid;
+  grid-template-columns: 1fr 18rem;
+  gap: 3rem;
+  align-items: center;
+  padding-top: clamp(4rem, 10vh, 7rem);
+  padding-bottom: clamp(5rem, 14vh, 9rem);
 }
 
 .hero h1 {
-  font-size: clamp(3.2rem, 10vw, 7.5rem);
+  font-size: clamp(3rem, 8vw, 6rem);
   letter-spacing: -0.02em;
-  max-width: 10ch;
+  max-width: 11ch;
   margin-bottom: 1.75rem;
+}
+
+/* Photo frame on the right of the hero */
+.hero-photo img,
+.photo-placeholder {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1.5px solid rgba(168, 201, 154, 0.6);
+}
+
+/* Show the upper part of the photo, where the face is */
+.hero-photo img {
+  object-position: center 20%;
+}
+
+.photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .lead {
@@ -331,6 +361,24 @@ h3 {
   font-size: 0.92rem;
 }
 
+/* ---------- Testimonials ---------- */
+.quotes blockquote + blockquote {
+  margin-top: 2.5rem;
+}
+
+.quotes blockquote p {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  line-height: 1.45;
+  padding-left: 1.25rem;
+  border-left: 3px solid var(--lichen);
+}
+
+.quotes blockquote footer {
+  margin: 0.75rem 0 0 1.25rem;
+  font-size: 0.95rem;
+}
+
 /* ---------- Contact ---------- */
 .contact {
   padding: 7rem 0;
@@ -405,6 +453,14 @@ h3 {
 
   .split > h2 {
     position: static;
+  }
+
+  .hero-body {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-photo {
+    max-width: 14rem;
   }
 
   .facts,
