@@ -13,23 +13,29 @@
 </head>
 <body>
 
+  <!-- Glowing bar along the top that fills as you scroll -->
+  <div class="progress" aria-hidden="true"></div>
+
   <!-- HERO: deep green block with tree-ring lines -->
   <header class="hero" id="top">
-    <nav class="nav wrap" aria-label="Main">
-      <a href="#top" class="logo">Aloysius Yam</a>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#experience">Experience</a>
-        <a href="documents.html">Documents</a>
-        <a href="testimonials.html">Testimonials</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
+    <!-- MENU: stays fixed at the top of the screen -->
+    <div class="topbar">
+      <nav class="nav wrap" aria-label="Main">
+        <a href="#top" class="logo">Aloysius Yam</a>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#education">Education</a>
+          <a href="#experience">Experience</a>
+          <a href="documents.html">Documents</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
 
     <div class="hero-body wrap">
       <div class="hero-text">
-        <h1>Hi, I'm Aloysius Yam.</h1>
+        <h1>Hi, I'm <span class="glow-text">Aloysius Yam.</span></h1>
         <p class="lead">
           Incoming NUS Environmental Studies student with a focused interest in
           ESG and sustainable finance. I'm looking for a sustainable finance
@@ -44,7 +50,54 @@
     </div>
   </header>
 
+  <!-- TICKER: topics slide sideways in a loop. The list is written twice
+       on purpose so the loop has no gap. Topics come from your Experience section. -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Sustainable finance</span>
+      <span>ESG frameworks</span>
+      <span>Green bonds</span>
+      <span>Sustainability-linked loans</span>
+      <span>Transition finance</span>
+      <span>Climate disclosure</span>
+      <span>ESG ratings</span>
+      <span>Singapore green finance</span>
+      <span>Sustainable finance</span>
+      <span>ESG frameworks</span>
+      <span>Green bonds</span>
+      <span>Sustainability-linked loans</span>
+      <span>Transition finance</span>
+      <span>Climate disclosure</span>
+      <span>ESG ratings</span>
+      <span>Singapore green finance</span>
+    </div>
+  </div>
+
   <main>
+
+    <!-- AT A GLANCE: numbers count up when they scroll into view.
+         Each number comes from elsewhere on this page. To change one,
+         edit BOTH the data-count value and the number inside the tag. -->
+    <section class="stats-band" aria-label="At a glance">
+      <ul class="wrap stats">
+        <li>
+          <span class="stat-num"><span data-count="4">4</span></span>
+          <span class="stat-label">A grades at A-Level</span>
+        </li>
+        <li>
+          <span class="stat-num"><span data-count="40">40</span>+</span>
+          <span class="stat-label">Students in the economics discussions I ran</span>
+        </li>
+        <li>
+          <span class="stat-num"><span data-count="5">5</span></span>
+          <span class="stat-label">Committee members I led as Economics Society President</span>
+        </li>
+        <li>
+          <span class="stat-num"><span data-count="2">2</span></span>
+          <span class="stat-label">Sustainability certificates completed in 2026</span>
+        </li>
+      </ul>
+    </section>
 
     <!-- ABOUT: wording based on the Profile section of your CV -->
     <section id="about" class="section">
@@ -258,6 +311,9 @@
       <a href="#top">Back to top</a>
     </div>
   </footer>
+
+  <!-- Small extras: counting numbers, glow that follows the mouse, magnetic buttons -->
+  <script src="script.js" defer></script>
 
 </body>
 </html>

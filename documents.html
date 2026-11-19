@@ -12,19 +12,25 @@
 </head>
 <body>
 
+  <!-- Glowing bar along the top that fills as you scroll -->
+  <div class="progress" aria-hidden="true"></div>
+
   <!-- HEADER: smaller version of the home page's green block -->
   <header class="hero hero-small" id="top">
-    <nav class="nav wrap" aria-label="Main">
-      <a href="index.html" class="logo">Aloysius Yam</a>
-      <div class="nav-links">
-        <a href="index.html#about">About</a>
-        <a href="index.html#education">Education</a>
-        <a href="index.html#experience">Experience</a>
-        <a href="documents.html" aria-current="page">Documents</a>
-        <a href="testimonials.html">Testimonials</a>
-        <a href="index.html#contact">Contact</a>
-      </div>
-    </nav>
+    <!-- MENU: stays fixed at the top of the screen -->
+    <div class="topbar">
+      <nav class="nav wrap" aria-label="Main">
+        <a href="index.html" class="logo">Aloysius Yam</a>
+        <div class="nav-links">
+          <a href="index.html#about">About</a>
+          <a href="index.html#education">Education</a>
+          <a href="index.html#experience">Experience</a>
+          <a href="documents.html" aria-current="page">Documents</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
 
     <div class="hero-body wrap">
       <h1>Documents</h1>
@@ -116,6 +122,9 @@
       <a href="#top">Back to top</a>
     </div>
   </footer>
+
+  <!-- Small extras: counting numbers, glow that follows the mouse, magnetic buttons -->
+  <script src="script.js" defer></script>
 
 </body>
 </html>
